@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="一段输入如何变成下一个 token">
+    <mxGraphModel page="1" pageWidth="1400" pageHeight="600" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="一段输入如何变成下一个 token" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=29;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="1360" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="文本&lt;br&gt;Tokenizer" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="140" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Token IDs" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="140" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Embedding" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="140" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="L 个&lt;br&gt;Decoder Block" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="140" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Final RMSNorm&lt;br&gt;LM Head / logits" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="940" y="140" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="采样&lt;br&gt;新 token" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="140" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" source="3" target="4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="" source="4" target="5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" source="5" target="6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" source="6" target="7" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="" source="7" target="8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="追加到输出序列&lt;br&gt;下一步只送新增 token" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="930" y="380" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" source="8" target="14" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0.5;exitY=1;entryX=0.85;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Decode" source="14" target="5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" value="Prefill 处理已有 prompt；Decode 的历史上下文由各层 KV Cache 提供。" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry x="30" y="520" width="1340" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

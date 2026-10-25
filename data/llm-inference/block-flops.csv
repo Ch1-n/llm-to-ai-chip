@@ -1,0 +1,5 @@
+operation,prefill_flops,decode_flops
+qkv_projection,1811939328,3538944
+attention_qk_and_pv,805306368,1572864
+output_projection,603979776,1179648
+swiglu_three_projections,4831838208,9437184

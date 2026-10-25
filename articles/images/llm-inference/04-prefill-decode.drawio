@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="同一组投影权重面对的输入形状不同">
+    <mxGraphModel page="1" pageWidth="1240" pageHeight="690" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="同一组投影权重面对的输入形状不同" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=29;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="1200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Prefill" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="10" y="150" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="输入 X&lt;br&gt;[B×S, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="100" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="×" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="权重 W&lt;br&gt;[H, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="100" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="=" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="800" y="150" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="输出 Y&lt;br&gt;[B×S, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="890" y="100" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Decode" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="10" y="430" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="输入 X&lt;br&gt;[B, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="430" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="×" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="500" y="430" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="权重 W&lt;br&gt;[H, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="380" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="=" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="800" y="430" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="输出 Y&lt;br&gt;[B, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="890" y="430" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="示意的是线性投影；B 很小时，Decode 的矩阵行数很少。" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry x="20" y="590" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Attention 中：Prefill 的 query 长度为 S，单步 Decode 的 query 长度为 1。" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry x="20" y="630" width="1200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

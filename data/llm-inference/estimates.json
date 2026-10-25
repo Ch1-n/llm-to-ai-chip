@@ -1,0 +1,129 @@
+{
+  "config": {
+    "layers": 6,
+    "hidden": 768,
+    "query_heads": 12,
+    "intermediate": 2048,
+    "vocabulary": 50257,
+    "batch": 1,
+    "prefill_tokens": 512,
+    "decode_visible_tokens": 512,
+    "bytes_per_element": 2
+  },
+  "head_dim": 64,
+  "assumptions": {
+    "status": "analytical_estimate_not_measurement",
+    "flops_per_multiply_add": 2,
+    "attention": "dense MHA; full score products including entries later masked",
+    "omitted_flops": [
+      "bias addition",
+      "RMSNorm",
+      "RoPE",
+      "Softmax",
+      "SiLU",
+      "elementwise product",
+      "residual addition",
+      "sampling"
+    ],
+    "parameters": "untied embedding/LM head; QKV and attention-output biases; no FFN biases; RMSNorm gains",
+    "storage_precision": "2 bytes is an accounting assumption, not an executed FP16/BF16 benchmark",
+    "ideal_weight_read": "each decoder/LM-head projection weight fetched once per decode batch; no persistent on-chip weight retention; embedding is a row gather",
+    "cache_excludes": [
+      "allocator padding",
+      "page metadata",
+      "temporary buffers",
+      "activation memory",
+      "quantization scales"
+    ]
+  },
+  "parameters": 119690496,
+  "weight_capacity_bytes": 239380992,
+  "prefill_per_block_flops": {
+    "qkv_projection": 1811939328,
+    "attention_qk_and_pv": 805306368,
+    "output_projection": 603979776,
+    "swiglu_three_projections": 4831838208
+  },
+  "decode_per_block_flops": {
+    "qkv_projection": 3538944,
+    "attention_qk_and_pv": 1572864,
+    "output_projection": 1179648,
+    "swiglu_three_projections": 9437184
+  },
+  "prefill_decoder_flops": 48318382080,
+  "decode_decoder_flops": 94371840,
+  "lm_head_one_position_flops": 77194752,
+  "lm_head_all_prefill_positions_flops": 39523713024,
+  "decode_decoder_and_lm_head_flops": 171566592,
+  "kv_cache_capacity_bytes": 9437184,
+  "kv_new_token_append_bytes": 18432,
+  "ideal_decode_projection_weight_read_bytes": 162129408,
+  "cache_capacity_examples": [
+    {
+      "layers": 32,
+      "batch": 1,
+      "query_heads": 32,
+      "head_dim": 128,
+      "kv_heads": 32,
+      "tokens": 8192,
+      "bytes_per_element": 2,
+      "cache_bytes": 4294967296,
+      "scope": "independent hypothetical configuration, not the 512-token teaching model"
+    },
+    {
+      "layers": 32,
+      "batch": 1,
+      "query_heads": 32,
+      "head_dim": 128,
+      "kv_heads": 8,
+      "tokens": 8192,
+      "bytes_per_element": 2,
+      "cache_bytes": 1073741824,
+      "scope": "independent hypothetical configuration, not the 512-token teaching model"
+    },
+    {
+      "layers": 32,
+      "batch": 1,
+      "query_heads": 32,
+      "head_dim": 128,
+      "kv_heads": 32,
+      "tokens": 16384,
+      "bytes_per_element": 2,
+      "cache_bytes": 8589934592,
+      "scope": "independent hypothetical configuration, not the 512-token teaching model"
+    },
+    {
+      "layers": 32,
+      "batch": 1,
+      "query_heads": 32,
+      "head_dim": 128,
+      "kv_heads": 8,
+      "tokens": 16384,
+      "bytes_per_element": 2,
+      "cache_bytes": 2147483648,
+      "scope": "independent hypothetical configuration, not the 512-token teaching model"
+    },
+    {
+      "layers": 32,
+      "batch": 1,
+      "query_heads": 32,
+      "head_dim": 128,
+      "kv_heads": 32,
+      "tokens": 32768,
+      "bytes_per_element": 2,
+      "cache_bytes": 17179869184,
+      "scope": "independent hypothetical configuration, not the 512-token teaching model"
+    },
+    {
+      "layers": 32,
+      "batch": 1,
+      "query_heads": 32,
+      "head_dim": 128,
+      "kv_heads": 8,
+      "tokens": 32768,
+      "bytes_per_element": 2,
+      "cache_bytes": 4294967296,
+      "scope": "independent hypothetical configuration, not the 512-token teaching model"
+    }
+  ]
+}

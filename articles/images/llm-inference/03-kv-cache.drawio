@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Decode 只算新增位置 但仍需访问历史状态">
+    <mxGraphModel page="1" pageWidth="1240" pageHeight="650" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Decode 只算新增位置 但仍需访问历史状态" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=29;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="1200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="新增隐藏向量&lt;br&gt;[B, 1, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="170" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Q / K / V&lt;br&gt;线性投影" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="170" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Q / K 做 RoPE&lt;br&gt;V 不旋转" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="610" y="170" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Attention&lt;br&gt;得到当前输出" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="980" y="170" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="本层 KV Cache&lt;br&gt;历史状态 + 新 K/V&lt;br&gt;可见长度 P+1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="420" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="" source="3" target="4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" source="4" target="5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Q" source="5" target="6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=1;exitY=0.3;entryX=0;entryY=0.3;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="追加新 K/V" source="5" target="7" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="读取可见 K/V" source="7" target="6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="P 是已有缓存长度；每层独立保存 K/V；历史 K 不重复旋转。" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry x="20" y="580" width="1200" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

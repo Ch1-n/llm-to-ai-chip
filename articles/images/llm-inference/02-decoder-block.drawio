@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="一个 Pre-Norm Decoder Block">
+    <mxGraphModel page="1" pageWidth="1240" pageHeight="660" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="一个 Pre-Norm Decoder Block" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=29;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="1200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="输入 X&lt;br&gt;[B, S, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="130" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="RMSNorm" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="280" y="130" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Attention&lt;br&gt;MHA + RoPE" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="580" y="120" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="+" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;ellipse;fontSize=34;" vertex="1" parent="1">
+          <mxGeometry x="950" y="140" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="RMSNorm" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="360" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="FFN&lt;br&gt;SwiGLU" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#E7EFF7;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="490" y="350" width="270" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="+" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;ellipse;fontSize=34;" vertex="1" parent="1">
+          <mxGeometry x="290" y="370" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="输出 Y&lt;br&gt;[B, S, H]" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=#F3F5F6;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="360" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" source="3" target="4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" source="4" target="5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="" source="5" target="6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="残差" source="3" target="6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0.5;exitY=0;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="90" />
+              <mxPoint x="980" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="" source="6" target="7" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="" source="7" target="8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" source="8" target="9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" source="9" target="10" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=0;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="残差" source="6" target="9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#486579;strokeWidth=2;endArrow=block;fontFamily=Arial;fontSize=19;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitX=1;exitY=0.5;entryX=0.5;entryY=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="170" />
+              <mxPoint x="1180" y="520" />
+              <mxPoint x="320" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" value="Attention：Q/K/V 投影、Q/K 旋转、因果注意力和输出投影" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry x="30" y="570" width="1180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="SwiGLU：gate / up 两组投影，激活与逐元素乘，再做 down 投影" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=23;fontColor=#253542;strokeColor=#708798;fillColor=none;spacing=10;strokeColor=none;fontSize=21;" vertex="1" parent="1">
+          <mxGeometry x="30" y="610" width="1180" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
