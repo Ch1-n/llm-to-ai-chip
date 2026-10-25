@@ -15,6 +15,7 @@
 - [可编辑配图](articles/images/llm-inference/)：`.drawio` 和供 Markdown 展示的 PNG。
 - [来源与范围](SOURCES.md)：开源学习起点、原始论文以及当前验证边界。
 - [CUDA 测试记录](experiments/cuda-20261025.md)：RTX 4090 D 上的数值检查、推理基准与训练冒烟测试。
+- [中文语料训练实验](experiments/seq-monkey-300.md)：Seq-Monkey 子集上的 300 步训练与验证 Loss 曲线，保留逐步日志及数据划分摘要。
 
 在仓库根目录运行：
 

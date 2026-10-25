@@ -1,0 +1,41 @@
+{
+  "seed": 1024,
+  "model": {
+    "block_size": 512,
+    "batch_size": 12,
+    "n_layer": 6,
+    "n_head": 12,
+    "n_embd": 768,
+    "head_size": 64,
+    "rope_theta": 10000.0,
+    "dropout": 0.1,
+    "vocab_size": 50257
+  },
+  "parameters": 119690496,
+  "steps": 300,
+  "batch": 12,
+  "sequence": 512,
+  "precision": "FP32 weights/optimizer; BF16 autocast; no GradScaler",
+  "optimizer": "AdamW lr_peak=3e-4 lr_min=3e-5 weight_decay=0.01 grad_clip=1.0",
+  "schedule": "20-step linear warmup then cosine to minimum",
+  "validation_blocks": 192,
+  "eval_every": 25,
+  "gpu": "NVIDIA GeForce RTX 4090 D",
+  "pytorch": "2.7.0+cu128",
+  "cuda": "12.8",
+  "notebook_sha256": "82ea12f8f5ce143d6ca7783d0cac6f0289676e6c395d94cc3b80a9af1b1fa7d5",
+  "training_script_sha256": "b43be4bbdfb5cd358341e139f93e3b5deb3efd164bdf35b267941f6d347d2461",
+  "loader_script_sha256": "8213b4192a77dbd81fe1832b71f737f9fb0c2be0a3cc977ff94c48e870ffa04c",
+  "data_manifest_sha256": "bf89e9575ca057541cd368cce57adbe38a7477792eefe659438288c924371c8e",
+  "tokens_available": {
+    "train": 4259581,
+    "val": 203545
+  },
+  "blocks_available": {
+    "train": 8319,
+    "val": 397
+  },
+  "training_order": "Random permutation of packed non-overlapping input blocks; reshuffle on exhaustion.",
+  "document_packing": "Concatenate separately in each split with EOT; attention may cross document boundaries.",
+  "interpretation": "Short real-text learning experiment, not convergence or general capability validation. Fixed held-out validation blocks reused throughout."
+}
