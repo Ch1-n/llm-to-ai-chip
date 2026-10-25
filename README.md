@@ -14,6 +14,7 @@
 - [估算数据](data/llm-inference/estimates.json)：包含模型配置、FLOPs 口径、容量假设和示例计算。
 - [可编辑配图](articles/images/llm-inference/)：`.drawio` 和供 Markdown 展示的 PNG。
 - [来源与范围](SOURCES.md)：开源学习起点、原始论文以及当前验证边界。
+- [CUDA 测试记录](experiments/cuda-20261025.md)：RTX 4090 D 上的数值检查、推理基准与训练冒烟测试。
 
 在仓库根目录运行：
 
@@ -22,6 +23,6 @@ python3 tools/estimate_workload.py
 python3 -m unittest discover -s tests -v
 ```
 
-当前文章中的 FLOPs、参数量和缓存容量均为解析估算，不是 GPU/NPU 性能实测。尚未提供 DeepSeek-V4 Hybrid Attention 的复现。知乎 Word 和导出工具保留在本地 `zhihu/` 目录，不上传仓库。
+当前文章中的 FLOPs、参数量和缓存容量为解析估算；CUDA 小节另外给出教学执行路径的实测，不代表 GPU 优化后的性能上限。尚未提供 DeepSeek-V4 Hybrid Attention 的复现。知乎 Word 保留在本地 `zhihu/` 目录，导出工具保留在 `.build/`，不上传仓库。
 
 作者：Ch'in。
