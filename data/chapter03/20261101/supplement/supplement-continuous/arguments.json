@@ -1,0 +1,24 @@
+{
+  "operation": "continuous",
+  "output": "runs/supplement-continuous",
+  "device": "cuda",
+  "preset": "teaching",
+  "checkpoints": [],
+  "contexts": [
+    2048,
+    8192
+  ],
+  "variants": [
+    "mha",
+    "mla",
+    "shared-dense",
+    "swa",
+    "hybrid"
+  ],
+  "prefix": 512,
+  "steps": 256,
+  "repeats": 3,
+  "data": null,
+  "samples": 8,
+  "suffix": 128
+}

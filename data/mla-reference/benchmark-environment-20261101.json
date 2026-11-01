@@ -1,0 +1,48 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "pytorch": "2.7.0+cu128",
+  "cuda_runtime": "12.8",
+  "cuda_available": true,
+  "packages": {
+    "torch": "2.7.0+cu128",
+    "numpy": "2.2.6",
+    "flash-attn": "2.8.3",
+    "flash-attn-3": null,
+    "flash-attn-4": "4.0.0b36",
+    "nvidia-cutlass-dsl": "4.8.1"
+  },
+  "source_sha256": {
+    "__init__.py": "3c05f0197d11df095f3d3efdb7f38c9fa2ba287150a63b821821b6d8f246d16e",
+    "attention.py": "32560043b95d75b5591e4457d7098820a612c78ec4a6057ecf6b84fa8d22844c",
+    "cache.py": "23b873e44dc83a622f12a5b0a1f5ab823f69d448c7aaeaaa72df16d0358f21c7",
+    "check_mla_reference.py": "01e5f8ffbf0d606cf3a64c7089259aba9f509b697f9921bbb5528e5f9a3000cf",
+    "check_precision.py": "bf1aeb1f022963d9a5eadddd0b115c23c3d4e2e88248ad015032db83651499ad",
+    "checks.py": "5d0ed491f25f0e2efc9e84fbcda77725b55774621a5ceea8e1286718956c9613",
+    "config.py": "1cc209f8a061899412271eb982e7db91aa5af84666ada1a45cd807fcd97a2702",
+    "diagnose_router.py": "2d471c3655a64440a9b019c6a205c1c52b21309308e19581d7567ead371a4978",
+    "micro.py": "cd56d00bbbfd965fc7c367ee3eca04c7995dcff191863186a98244a6ddd6ffb9",
+    "mla_reference.py": "501b64f5fc1a815462ad39eedb9af2f57e8ae34f36f7a79d96a84e332c321dda",
+    "model.py": "45fa61e9f2eca05c502e54d89b32815ad494996cb76f5d5d4aaa840792672139",
+    "notebook_adapter.py": "50fc8605e6f93e297fd5c0fa274263442842d9f2a715025a63ff9125437a2a69",
+    "plot_mla_training.py": "0d8e615c61d3df12dff41ca6047636bf41a7ebf82ee89855bd1ec7b5307264fd",
+    "run.py": "c238e55be1ac155e7f64af4c8df2401778d8f6ed4a1d2358f9ed0d6188add896",
+    "runtime.py": "7180c10ba8aa06825387700ae3173613021f19f32635ffd89796e773daffefbf",
+    "suite.py": "44d9e5fb2d20c846ce6b69689ce7e87f67c20b23ccf459227dc73ac04874f7aa",
+    "summarize.py": "8a82f102ec075828381743995219e82c740465338baa0cbe38d3a98e7651b36e",
+    "trace_summary.py": "83b8005ab48e65fba583150567b0cf8b8ab25a72308256fed9877836ad3d3b6a",
+    "training.py": "e785f179120b51271888376ddd93d6f96e26cb11cd70e08f0033e3f5c544ed12"
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "compute_capability": [
+        8,
+        9
+      ],
+      "total_memory_bytes": 25250627584
+    }
+  ],
+  "nvidia_smi": "Sun Nov  1 08:53:37 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4090        On  |   00000000:52:00.0 Off |                  Off |\n| 30%   29C    P8             17W /  450W |       3MiB /  24564MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n"
+}

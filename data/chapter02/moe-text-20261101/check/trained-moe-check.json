@@ -1,0 +1,271 @@
+{
+  "records": [
+    {
+      "precision": "fp32",
+      "logits": {
+        "max_abs": 8.58306884765625e-06,
+        "relative_l2": 1.8025747059701305e-07,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2_limit": 0.001,
+        "passed": true
+      },
+      "layers": [
+        {
+          "layer": "blocks.0.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.1.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.2.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.3.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.4.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.5.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        }
+      ]
+    },
+    {
+      "precision": "native-bf16",
+      "logits": {
+        "max_abs": 0.4375,
+        "relative_l2": 0.003142565000180761,
+        "passed": false,
+        "reason": "Tensor-likes are not close!\n\nMismatched elements: 142 / 12865792 (0.0%)\nGreatest absolute difference: 0.4296875 at index (0, 71, 228) (up to 0.08 allowed)\nGreatest relative difference: 18.027027130126953 at index (0, 71, 23924) (up to 0.08 allowed)"
+      },
+      "layers": [
+        {
+          "layer": "blocks.0.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            26
+          ],
+          "full_margin_at_changes": [
+            0.0
+          ]
+        },
+        {
+          "layer": "blocks.1.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            112
+          ],
+          "full_margin_at_changes": [
+            0.0
+          ]
+        },
+        {
+          "layer": "blocks.2.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            168
+          ],
+          "full_margin_at_changes": [
+            0.0006879419088363647
+          ]
+        },
+        {
+          "layer": "blocks.3.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.4.ffn",
+          "changed_tokens": 2,
+          "positions": [
+            82,
+            144
+          ],
+          "full_margin_at_changes": [
+            0.0,
+            0.00029206275939941406
+          ]
+        },
+        {
+          "layer": "blocks.5.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            71
+          ],
+          "full_margin_at_changes": [
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "precision": "bf16-autocast",
+      "logits": {
+        "max_abs": 0.4375,
+        "relative_l2": 0.003410198270258571,
+        "passed": false,
+        "reason": "Tensor-likes are not close!\n\nMismatched elements: 150 / 12865792 (0.0%)\nGreatest absolute difference: 0.4375 at index (0, 71, 228) (up to 0.08 allowed)\nGreatest relative difference: 13.967320442199707 at index (0, 71, 10333) (up to 0.08 allowed)"
+      },
+      "layers": [
+        {
+          "layer": "blocks.0.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            26
+          ],
+          "full_margin_at_changes": [
+            3.1346455216407776e-05
+          ]
+        },
+        {
+          "layer": "blocks.1.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            179
+          ],
+          "full_margin_at_changes": [
+            0.0008397325873374939
+          ]
+        },
+        {
+          "layer": "blocks.2.ffn",
+          "changed_tokens": 2,
+          "positions": [
+            85,
+            168
+          ],
+          "full_margin_at_changes": [
+            0.00032445043325424194,
+            0.0006855875253677368
+          ]
+        },
+        {
+          "layer": "blocks.3.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.4.ffn",
+          "changed_tokens": 2,
+          "positions": [
+            82,
+            171
+          ],
+          "full_margin_at_changes": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "layer": "blocks.5.ffn",
+          "changed_tokens": 4,
+          "positions": [
+            71,
+            74,
+            139,
+            156
+          ],
+          "full_margin_at_changes": [
+            0.0006210952997207642,
+            0.0017830729484558105,
+            0.0013004988431930542,
+            0.0010321885347366333
+          ]
+        }
+      ]
+    },
+    {
+      "precision": "native-bf16-fp32-router",
+      "logits": {
+        "max_abs": 0.4375,
+        "relative_l2": 0.002976290372994584,
+        "passed": false,
+        "reason": "Tensor-likes are not close!\n\nMismatched elements: 55 / 12865792 (0.0%)\nGreatest absolute difference: 0.421875 at index (0, 168, 228) (up to 0.08 allowed)\nGreatest relative difference: 3.5514402389526367 at index (0, 168, 2154) (up to 0.08 allowed)"
+      },
+      "layers": [
+        {
+          "layer": "blocks.0.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.1.ffn",
+          "changed_tokens": 2,
+          "positions": [
+            112,
+            179
+          ],
+          "full_margin_at_changes": [
+            0.0009323060512542725,
+            0.00012367218732833862
+          ]
+        },
+        {
+          "layer": "blocks.2.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            168
+          ],
+          "full_margin_at_changes": [
+            0.0004084557294845581
+          ]
+        },
+        {
+          "layer": "blocks.3.ffn",
+          "changed_tokens": 0,
+          "positions": [],
+          "full_margin_at_changes": []
+        },
+        {
+          "layer": "blocks.4.ffn",
+          "changed_tokens": 3,
+          "positions": [
+            82,
+            144,
+            167
+          ],
+          "full_margin_at_changes": [
+            0.00013774633407592773,
+            0.00030572712421417236,
+            0.000331781804561615
+          ]
+        },
+        {
+          "layer": "blocks.5.ffn",
+          "changed_tokens": 1,
+          "positions": [
+            110
+          ],
+          "full_margin_at_changes": [
+            0.00121249258518219
+          ]
+        }
+      ]
+    }
+  ],
+  "checkpoint_sha256": "d51f6b3d80249d7f9efcafee6ec665b936a04681c1a2d1a907c0c0269c019e87",
+  "val_bin_sha256": "e7ec559a11ba7b7566005c4a0f4468b961019df544d3f7d847326a59da2bb28e",
+  "scope": "one held-out packed text of 256 tokens, trained checkpoint; compare full vs 127/1/128; no forced routes, no blanket low-precision equivalence claim"
+}

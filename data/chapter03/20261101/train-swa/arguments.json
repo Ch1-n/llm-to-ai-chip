@@ -1,0 +1,16 @@
+{
+  "operation": "train",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "preset": "teaching",
+  "output": "/root/autodl-tmp/llm-chapter03-20261101/runs/train-swa-300",
+  "variant": "swa",
+  "batch": 12,
+  "context": 512,
+  "data": "/root/autodl-tmp/llm-chapter02-20261025/datasets/seq-monkey-first-subset",
+  "steps": 300,
+  "eval_every": 25,
+  "eval_blocks": 192,
+  "lr": 0.0003,
+  "aux_weight": 0.01
+}

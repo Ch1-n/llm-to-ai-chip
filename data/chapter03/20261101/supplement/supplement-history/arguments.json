@@ -1,0 +1,28 @@
+{
+  "operation": "history",
+  "output": "runs/supplement-history",
+  "device": "cuda",
+  "preset": "teaching",
+  "checkpoints": [
+    "runs/train-hybrid-300/best-model.pt",
+    "runs/train-swa-300/best-model.pt"
+  ],
+  "contexts": [
+    512,
+    2048,
+    8192
+  ],
+  "variants": [
+    "mha",
+    "mla",
+    "shared-dense",
+    "swa",
+    "hybrid"
+  ],
+  "prefix": 512,
+  "steps": 256,
+  "repeats": 3,
+  "data": "/root/autodl-tmp/llm-chapter02-20261025/datasets/seq-monkey-first-subset",
+  "samples": 8,
+  "suffix": 128
+}

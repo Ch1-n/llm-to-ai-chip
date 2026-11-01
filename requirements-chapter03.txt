@@ -1,0 +1,5 @@
+# Install a CUDA-compatible torch wheel first; exact versions are in run metadata.
+# 2.8+ is needed by the pinned official V4 source's dtype declarations.
+torch>=2.8,<3
+numpy>=1.26,<3
+matplotlib>=3.8,<4

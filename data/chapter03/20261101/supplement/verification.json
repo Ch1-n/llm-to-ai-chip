@@ -1,0 +1,22 @@
+{
+  "integrity_status": "passed",
+  "numerical_status": "known low-precision non-equivalence retained",
+  "source_fingerprints_verified": 232,
+  "public_json_copies_verified": 14,
+  "continuous_samples": 3840,
+  "ablation_cases": 28,
+  "history_records": 48,
+  "trained_check_groups": 8,
+  "trained_check_failed_groups": 1,
+  "moe_train_records": 300,
+  "moe_val_records": 13,
+  "moe_checkpoint_sha256": "d51f6b3d80249d7f9efcafee6ec665b936a04681c1a2d1a907c0c0269c019e87",
+  "token_file_sha256": {
+    "train": "cc23e083c35c99804a1017159a837ffd45bfb8e7668011b2e3b269da22cfd113",
+    "val": "e7ec559a11ba7b7566005c4a0f4468b961019df544d3f7d847326a59da2bb28e"
+  },
+  "source_archives_sha256": {
+    "supplement-source-uploaded.tar.gz": "7f37b219575ce100e56ea65af2342fc8dc5a23af851f1c4cee95b9f408c77ac1",
+    "supplement-source-final.tar.gz": "8de1f009dd11fa8fee30f38888b6066d365fd0483538c4de77c7c571d54be4f2"
+  }
+}

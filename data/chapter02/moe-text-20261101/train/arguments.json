@@ -1,0 +1,20 @@
+{
+  "command": "train",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "threads": 4,
+  "output": "runs/train-moe-300-extra",
+  "preset": "teaching",
+  "batch": 12,
+  "context": 512,
+  "all_logits": false,
+  "aux_weight": 0.01,
+  "variant": "moe",
+  "backend": "math",
+  "data": "datasets/seq-monkey-first-subset",
+  "steps": 300,
+  "eval_every": 25,
+  "eval_blocks": 192,
+  "lr": 0.0003,
+  "save_checkpoint": true
+}

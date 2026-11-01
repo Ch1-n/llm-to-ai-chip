@@ -1,0 +1,4352 @@
+{
+  "records": [
+    {
+      "variant": "shared-dense",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 8192,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          32.73315727710724,
+          34.38575565814972,
+          32.757412642240524,
+          32.61291980743408,
+          32.58226811885834,
+          32.50811994075775,
+          32.844290137290955,
+          35.100117325782776,
+          32.69954025745392,
+          32.61749818921089
+        ],
+        "wall_median_ms": 32.71634876728058,
+        "wall_p10_ms": 32.57485330104828,
+        "wall_p90_ms": 34.457191824913025,
+        "cuda_event_ms": [
+          32.72297668457031,
+          34.37897491455078,
+          32.75299072265625,
+          32.60899353027344,
+          32.57785415649414,
+          32.50454330444336,
+          32.839935302734375,
+          35.094879150390625,
+          32.69443130493164,
+          32.61280059814453
+        ],
+        "peak_allocated_bytes": 278802432,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 1572864,
+          "allocated_storage_bytes": 1572864,
+          "layers": [
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "shared-dense",
+      "phase": "decode",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 8192,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          10.458126664161682,
+          12.711968272924423,
+          10.493099689483643,
+          10.379835963249207,
+          10.25645062327385,
+          10.355677455663681,
+          10.289955884218216,
+          10.3011354804039,
+          10.497305542230606,
+          10.442513972520828
+        ],
+        "wall_median_ms": 10.411174967885017,
+        "wall_p10_ms": 10.28660535812378,
+        "wall_p90_ms": 10.718771815299988,
+        "cuda_event_ms": [
+          10.45299243927002,
+          12.704480171203613,
+          10.486335754394531,
+          10.374431610107422,
+          10.250304222106934,
+          10.349984169006348,
+          10.284768104553223,
+          10.293600082397461,
+          10.48960018157959,
+          10.434016227722168
+        ],
+        "peak_allocated_bytes": 229775872,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 1572864,
+          "allocated_storage_bytes": 1572864,
+          "layers": [
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 262144,
+              "allocated_storage_bytes": 262144,
+              "fields": {
+                "raw": 262144
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "shared-dense",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 8192,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          216.495580971241,
+          216.25224873423576,
+          216.17860719561577,
+          216.17519855499268,
+          216.3221836090088,
+          216.33581072092056,
+          216.39245003461838,
+          216.3797840476036,
+          216.6614755988121,
+          216.32205322384834
+        ],
+        "wall_median_ms": 216.32899716496468,
+        "wall_p10_ms": 216.17826633155346,
+        "wall_p90_ms": 216.5121704339981,
+        "cuda_event_ms": [
+          216.49305725097656,
+          216.2480010986328,
+          216.17581176757812,
+          216.17007446289062,
+          216.31765747070312,
+          216.3296356201172,
+          216.38394165039062,
+          216.37583923339844,
+          216.65773010253906,
+          216.31887817382812
+        ],
+        "peak_allocated_bytes": 436973568,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 6291456,
+          "allocated_storage_bytes": 6291456,
+          "layers": [
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "shared-dense",
+      "phase": "decode",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 8192,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          10.372217744588852,
+          10.407578200101852,
+          10.398253798484802,
+          10.36180555820465,
+          10.36887988448143,
+          10.281309485435486,
+          10.369110852479935,
+          10.359600186347961,
+          10.330010205507278,
+          10.27427613735199
+        ],
+        "wall_median_ms": 10.36534272134304,
+        "wall_p10_ms": 10.280606150627136,
+        "wall_p90_ms": 10.399186238646507,
+        "cuda_event_ms": [
+          10.368000030517578,
+          10.403871536254883,
+          10.394463539123535,
+          10.357600212097168,
+          10.365056037902832,
+          10.276512145996094,
+          10.364864349365234,
+          10.354975700378418,
+          10.325728416442871,
+          10.270432472229004
+        ],
+        "peak_allocated_bytes": 240106496,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 6291456,
+          "allocated_storage_bytes": 6291456,
+          "layers": [
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 1048576,
+              "allocated_storage_bytes": 1048576,
+              "fields": {
+                "raw": 1048576
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "swa",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          43.95671188831329,
+          44.0489687025547,
+          43.94786059856415,
+          43.96943747997284,
+          44.09634321928024,
+          43.901458382606506,
+          44.173117727041245,
+          44.02569681406021,
+          43.9894013106823,
+          44.01916638016701
+        ],
+        "wall_median_ms": 44.00428384542465,
+        "wall_p10_ms": 43.943220376968384,
+        "wall_p90_ms": 44.10402067005634,
+        "cuda_event_ms": [
+          43.95199966430664,
+          44.04345703125,
+          43.94371032714844,
+          43.963905334472656,
+          44.090816497802734,
+          43.89718246459961,
+          44.16889572143555,
+          44.02080154418945,
+          43.98553466796875,
+          44.014976501464844
+        ],
+        "peak_allocated_bytes": 265174528,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 98304,
+          "allocated_storage_bytes": 98304,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "swa",
+      "phase": "decode",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          10.868161916732788,
+          10.885421186685562,
+          10.894525796175003,
+          10.98235696554184,
+          11.084005236625671,
+          10.906804352998734,
+          10.950081050395966,
+          10.980047285556793,
+          10.98356768488884,
+          11.182848364114761
+        ],
+        "wall_median_ms": 10.96506416797638,
+        "wall_p10_ms": 10.883695259690285,
+        "wall_p90_ms": 11.09388954937458,
+        "cuda_event_ms": [
+          10.860544204711914,
+          10.881088256835938,
+          10.889792442321777,
+          10.978400230407715,
+          11.0797119140625,
+          10.90294361114502,
+          10.94591999053955,
+          10.974944114685059,
+          10.979424476623535,
+          11.176223754882812
+        ],
+        "peak_allocated_bytes": 226826752,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 98304,
+          "allocated_storage_bytes": 98304,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "swa",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          147.34070003032684,
+          146.42203599214554,
+          148.09642359614372,
+          145.84802463650703,
+          145.82711830735207,
+          145.7451991736889,
+          146.9058319926262,
+          145.9648162126541,
+          145.88361978530884,
+          146.0626758635044
+        ],
+        "wall_median_ms": 146.01374603807926,
+        "wall_p10_ms": 145.81892639398575,
+        "wall_p90_ms": 147.41627238690853,
+        "cuda_event_ms": [
+          147.33824157714844,
+          146.4189453125,
+          148.09158325195312,
+          145.84352111816406,
+          145.82374572753906,
+          145.74172973632812,
+          146.90261840820312,
+          145.96144104003906,
+          145.88067626953125,
+          146.0596466064453
+        ],
+        "peak_allocated_bytes": 377421312,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 98304,
+          "allocated_storage_bytes": 98304,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "swa",
+      "phase": "decode",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 108466632,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          11.000774800777435,
+          11.011771857738495,
+          11.02449744939804,
+          11.010751128196716,
+          11.014305055141449,
+          11.000994592905045,
+          11.014550924301147,
+          10.99894568324089,
+          11.041343212127686,
+          11.02784276008606
+        ],
+        "wall_median_ms": 11.013038456439972,
+        "wall_p10_ms": 11.00059188902378,
+        "wall_p90_ms": 11.029192805290222,
+        "cuda_event_ms": [
+          10.995712280273438,
+          11.008000373840332,
+          11.020768165588379,
+          11.006784439086914,
+          11.009407997131348,
+          10.996512413024902,
+          11.010144233703613,
+          10.99465560913086,
+          11.036864280700684,
+          11.02409553527832
+        ],
+        "peak_allocated_bytes": 226875904,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 98304,
+          "allocated_storage_bytes": 98304,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "csa",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 110358024,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          85.03403514623642,
+          84.83999222517014,
+          84.98905226588249,
+          84.89247784018517,
+          84.94922518730164,
+          84.92017537355423,
+          84.97706055641174,
+          87.59154006838799,
+          85.64148098230362,
+          85.24167910218239
+        ],
+        "wall_median_ms": 84.98305641114712,
+        "wall_p10_ms": 84.88722927868366,
+        "wall_p90_ms": 85.83648689091206,
+        "cuda_event_ms": [
+          85.02681732177734,
+          84.83475494384766,
+          84.98531341552734,
+          84.8885726928711,
+          84.94464111328125,
+          84.91584014892578,
+          84.97248077392578,
+          87.58326721191406,
+          85.6336669921875,
+          85.23372650146484
+        ],
+        "peak_allocated_bytes": 269570560,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 706560,
+          "allocated_storage_bytes": 706560,
+          "layers": [
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "csa",
+      "phase": "decode",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 110358024,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          22.39210158586502,
+          22.42255210876465,
+          22.42523431777954,
+          22.404156625270844,
+          22.395849227905273,
+          22.365424782037735,
+          22.330392152071,
+          22.351238876581192,
+          22.349528968334198,
+          22.309500724077225
+        ],
+        "wall_median_ms": 22.378763183951378,
+        "wall_p10_ms": 22.32830300927162,
+        "wall_p90_ms": 22.422820329666138,
+        "cuda_event_ms": [
+          22.387744903564453,
+          22.418720245361328,
+          22.420671463012695,
+          22.40025520324707,
+          22.391679763793945,
+          22.36079978942871,
+          22.32655906677246,
+          22.34716796875,
+          22.345600128173828,
+          22.3055362701416
+        ],
+        "peak_allocated_bytes": 231321088,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 706560,
+          "allocated_storage_bytes": 706560,
+          "layers": [
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "csa",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 110358024,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          280.9448763728142,
+          279.2152874171734,
+          279.21323105692863,
+          284.03453901410103,
+          284.6612296998501,
+          281.6680409014225,
+          281.3694402575493,
+          282.526720315218,
+          281.1843380331993,
+          281.13746270537376
+        ],
+        "wall_median_ms": 281.2768891453743,
+        "wall_p10_ms": 279.2150817811489,
+        "wall_p90_ms": 284.09720808267593,
+        "cuda_event_ms": [
+          280.9415588378906,
+          279.2129211425781,
+          279.2089538574219,
+          284.03070068359375,
+          284.6583557128906,
+          281.6659240722656,
+          281.36773681640625,
+          282.5235595703125,
+          281.182373046875,
+          281.1344909667969
+        ],
+        "peak_allocated_bytes": 383586816,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 2476032,
+          "allocated_storage_bytes": 2476032,
+          "layers": [
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "csa",
+      "phase": "decode",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 110358024,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          22.305581718683243,
+          22.341419011354446,
+          23.45510944724083,
+          22.349461913108826,
+          22.43131399154663,
+          22.3294235765934,
+          22.371530532836914,
+          22.421471774578094,
+          22.33690395951271,
+          22.37245813012123
+        ],
+        "wall_median_ms": 22.36049622297287,
+        "wall_p10_ms": 22.327039390802383,
+        "wall_p90_ms": 22.53369353711605,
+        "cuda_event_ms": [
+          22.29964828491211,
+          22.337535858154297,
+          23.433439254760742,
+          22.345855712890625,
+          22.427648544311523,
+          22.325471878051758,
+          22.367103576660156,
+          22.4171199798584,
+          22.332063674926758,
+          22.368000030517578
+        ],
+        "peak_allocated_bytes": 233139712,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 2476032,
+          "allocated_storage_bytes": 2476032,
+          "layers": [
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hca",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          128,
+          128,
+          128,
+          128,
+          128,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109105992,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          59.49731916189194,
+          59.34550613164902,
+          59.51249226927757,
+          59.4232976436615,
+          59.417735785245895,
+          59.41569805145264,
+          59.45197492837906,
+          59.325382113456726,
+          60.544610023498535,
+          60.005929321050644
+        ],
+        "wall_median_ms": 59.43763628602028,
+        "wall_p10_ms": 59.34349372982979,
+        "wall_p90_ms": 60.05979739129543,
+        "cuda_event_ms": [
+          59.493377685546875,
+          59.34156799316406,
+          59.50886535644531,
+          59.41926574707031,
+          59.41388702392578,
+          59.411808013916016,
+          59.44812774658203,
+          59.31923294067383,
+          60.537696838378906,
+          59.9967041015625
+        ],
+        "peak_allocated_bytes": 266467840,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 110592,
+          "allocated_storage_bytes": 110592,
+          "layers": [
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hca",
+      "phase": "decode",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          128,
+          128,
+          128,
+          128,
+          128,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109105992,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          16.473181545734406,
+          19.238989800214767,
+          19.848249852657318,
+          15.236444771289825,
+          22.09031954407692,
+          16.346130520105362,
+          18.908053636550903,
+          19.847501069307327,
+          15.126951038837433,
+          26.229314506053925
+        ],
+        "wall_median_ms": 19.073521718382835,
+        "wall_p10_ms": 15.225495398044586,
+        "wall_p90_ms": 22.50421904027462,
+        "cuda_event_ms": [
+          16.466943740844727,
+          19.228832244873047,
+          19.843168258666992,
+          15.23078441619873,
+          22.085023880004883,
+          16.343135833740234,
+          18.90105628967285,
+          19.843904495239258,
+          15.12275218963623,
+          26.215103149414062
+        ],
+        "peak_allocated_bytes": 228513280,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 110592,
+          "allocated_storage_bytes": 110592,
+          "layers": [
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hca",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          128,
+          128,
+          128,
+          128,
+          128,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109105992,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          196.82402536273003,
+          198.88203591108322,
+          197.6744495332241,
+          197.09590449929237,
+          197.53412529826164,
+          196.70038670301437,
+          196.58560305833817,
+          196.37975469231606,
+          196.65919244289398,
+          199.8891793191433
+        ],
+        "wall_median_ms": 196.9599649310112,
+        "wall_p10_ms": 196.56501822173595,
+        "wall_p90_ms": 198.98275025188923,
+        "cuda_event_ms": [
+          196.82086181640625,
+          198.87686157226562,
+          197.67129516601562,
+          197.09222412109375,
+          197.5308837890625,
+          196.69798278808594,
+          196.58245849609375,
+          196.3759002685547,
+          196.65638732910156,
+          199.88592529296875
+        ],
+        "peak_allocated_bytes": 378751488,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 147456,
+          "allocated_storage_bytes": 147456,
+          "layers": [
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hca",
+      "phase": "decode",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          128,
+          128,
+          128,
+          128,
+          128,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109105992,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          15.090283006429672,
+          14.98233899474144,
+          14.974769204854965,
+          15.079937875270844,
+          15.005376189947128,
+          15.403170138597488,
+          15.09828120470047,
+          14.990352094173431,
+          14.99166339635849,
+          15.058711171150208
+        ],
+        "wall_median_ms": 15.032043680548668,
+        "wall_p10_ms": 14.981582015752792,
+        "wall_p90_ms": 15.128770098090172,
+        "cuda_event_ms": [
+          15.08454418182373,
+          14.977567672729492,
+          14.970687866210938,
+          15.075776100158691,
+          15.000960350036621,
+          15.399392127990723,
+          15.093664169311523,
+          14.986559867858887,
+          14.987968444824219,
+          15.054047584533691
+        ],
+        "peak_allocated_bytes": 228599296,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 147456,
+          "allocated_storage_bytes": 147456,
+          "layers": [
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 1,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 1,
+      "performance": {
+        "wall_ms": [
+          63.24021518230438,
+          63.9917328953743,
+          64.07737359404564,
+          63.131183385849,
+          62.91162967681885,
+          63.63954767584801,
+          63.19679692387581,
+          62.8206804394722,
+          62.93397396802902,
+          63.00659850239754
+        ],
+        "wall_median_ms": 63.163990154862404,
+        "wall_p10_ms": 62.90253475308418,
+        "wall_p90_ms": 64.00029696524143,
+        "cuda_event_ms": [
+          63.23295974731445,
+          63.984222412109375,
+          64.0683822631836,
+          63.1229133605957,
+          62.903072357177734,
+          63.630496978759766,
+          63.18815994262695,
+          62.812286376953125,
+          62.926143646240234,
+          62.99919891357422
+        ],
+        "peak_allocated_bytes": 267070976,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 305152,
+          "allocated_storage_bytes": 305152,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "decode",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 1,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 1,
+      "performance": {
+        "wall_ms": [
+          16.29863679409027,
+          16.370311379432678,
+          16.245044767856598,
+          16.286399215459824,
+          16.319680958986282,
+          16.589585691690445,
+          16.475588083267212,
+          16.41285791993141,
+          16.270853579044342,
+          16.341298818588257
+        ],
+        "wall_median_ms": 16.33048988878727,
+        "wall_p10_ms": 16.268272697925568,
+        "wall_p90_ms": 16.486987844109535,
+        "cuda_event_ms": [
+          16.290815353393555,
+          16.363264083862305,
+          16.239391326904297,
+          16.279775619506836,
+          16.31328010559082,
+          16.58246421813965,
+          16.469120025634766,
+          16.40617561340332,
+          16.26371192932129,
+          16.334335327148438
+        ],
+        "peak_allocated_bytes": 228902912,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 305152,
+          "allocated_storage_bytes": 305152,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 1,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 1,
+      "performance": {
+        "wall_ms": [
+          207.14674144983292,
+          209.7083367407322,
+          209.82345193624496,
+          208.65600183606148,
+          208.70551839470863,
+          208.40513706207275,
+          208.5377238690853,
+          207.4999287724495,
+          207.52352103590965,
+          208.68759602308273
+        ],
+        "wall_median_ms": 208.5968628525734,
+        "wall_p10_ms": 207.46461004018784,
+        "wall_p90_ms": 209.71984826028347,
+        "cuda_event_ms": [
+          207.14393615722656,
+          209.70361328125,
+          209.8191680908203,
+          208.6524200439453,
+          208.70130920410156,
+          208.4003143310547,
+          208.5332794189453,
+          207.49539184570312,
+          207.51898193359375,
+          208.68447875976562
+        ],
+        "peak_allocated_bytes": 379919872,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 907264,
+          "allocated_storage_bytes": 907264,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "decode",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 1,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 1,
+      "performance": {
+        "wall_ms": [
+          15.913017094135284,
+          16.041696071624756,
+          15.984933823347092,
+          16.04626327753067,
+          16.04536920785904,
+          16.436029225587845,
+          16.3869671523571,
+          16.07426255941391,
+          16.07411354780197,
+          16.005873680114746
+        ],
+        "wall_median_ms": 16.045816242694855,
+        "wall_p10_ms": 15.977742150425911,
+        "wall_p90_ms": 16.391873359680176,
+        "cuda_event_ms": [
+          15.90783977508545,
+          16.037919998168945,
+          15.981023788452148,
+          16.04185676574707,
+          16.040895462036133,
+          16.430816650390625,
+          16.38252830505371,
+          16.069984436035156,
+          16.070079803466797,
+          16.00182342529297
+        ],
+        "peak_allocated_bytes": 229554176,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 907264,
+          "allocated_storage_bytes": 907264,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          62.0054230093956,
+          61.86660751700401,
+          61.91477179527283,
+          61.74248829483986,
+          61.87649443745613,
+          62.903087586164474,
+          62.97915428876877,
+          62.67339736223221,
+          63.63712623715401,
+          62.397945672273636
+        ],
+        "wall_median_ms": 62.20168434083462,
+        "wall_p10_ms": 61.8541955947876,
+        "wall_p90_ms": 63.04495148360729,
+        "cuda_event_ms": [
+          62.00115203857422,
+          61.86220932006836,
+          61.91097640991211,
+          61.739009857177734,
+          61.87257766723633,
+          62.899070739746094,
+          62.97315216064453,
+          62.668094635009766,
+          63.631744384765625,
+          62.39334487915039
+        ],
+        "peak_allocated_bytes": 267070976,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 305152,
+          "allocated_storage_bytes": 305152,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "decode",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          16.132645308971405,
+          16.08135551214218,
+          16.08436554670334,
+          16.118455678224564,
+          16.1639042198658,
+          16.1588117480278,
+          16.081668436527252,
+          16.138266772031784,
+          16.079027205705643,
+          16.118045896291733
+        ],
+        "wall_median_ms": 16.118250787258148,
+        "wall_p10_ms": 16.081122681498528,
+        "wall_p90_ms": 16.1593209952116,
+        "cuda_event_ms": [
+          16.129024505615234,
+          16.077247619628906,
+          16.080703735351562,
+          16.11408042907715,
+          16.159744262695312,
+          16.154560089111328,
+          16.077503204345703,
+          16.134624481201172,
+          16.075328826904297,
+          16.113183975219727
+        ],
+        "peak_allocated_bytes": 228902912,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 305152,
+          "allocated_storage_bytes": 305152,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          206.3342072069645,
+          207.9792656004429,
+          208.00596848130226,
+          207.29996263980865,
+          207.32707902789116,
+          208.40036496520042,
+          210.32804995775223,
+          208.75615626573563,
+          208.4699608385563,
+          208.24171602725983
+        ],
+        "wall_median_ms": 208.12384225428104,
+        "wall_p10_ms": 207.20338709652424,
+        "wall_p90_ms": 208.9133456349373,
+        "cuda_event_ms": [
+          206.33395385742188,
+          207.97608947753906,
+          208.0015411376953,
+          207.2960968017578,
+          207.32073974609375,
+          208.3953857421875,
+          210.3348846435547,
+          208.7530517578125,
+          208.4668731689453,
+          208.2393035888672
+        ],
+        "peak_allocated_bytes": 379919872,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 907264,
+          "allocated_storage_bytes": 907264,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "decode",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 8,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 8,
+      "performance": {
+        "wall_ms": [
+          16.145866364240646,
+          16.176294535398483,
+          16.15934818983078,
+          16.182251274585724,
+          16.160748898983,
+          16.180619597434998,
+          16.169659793376923,
+          16.176670789718628,
+          16.19703322649002,
+          16.180727630853653
+        ],
+        "wall_median_ms": 16.176482662558556,
+        "wall_p10_ms": 16.158000007271767,
+        "wall_p90_ms": 16.183729469776154,
+        "cuda_event_ms": [
+          16.139263153076172,
+          16.17184066772461,
+          16.1549129486084,
+          16.1778564453125,
+          16.156415939331055,
+          16.176576614379883,
+          16.165184020996094,
+          16.173280715942383,
+          16.192960739135742,
+          16.175392150878906
+        ],
+        "peak_allocated_bytes": 229554176,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 907264,
+          "allocated_storage_bytes": 907264,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 32,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 32,
+      "performance": {
+        "wall_ms": [
+          62.58134916424751,
+          62.666475772857666,
+          62.67491728067398,
+          62.691330909729004,
+          62.589067965745926,
+          62.85901367664337,
+          63.467588275671005,
+          63.00225481390953,
+          62.79170140624046,
+          62.72941082715988
+        ],
+        "wall_median_ms": 62.71037086844444,
+        "wall_p10_ms": 62.588296085596085,
+        "wall_p90_ms": 63.04878816008568,
+        "cuda_event_ms": [
+          62.57664108276367,
+          62.66233444213867,
+          62.66777420043945,
+          62.684417724609375,
+          62.583168029785156,
+          62.85295867919922,
+          63.46076965332031,
+          62.99808120727539,
+          62.78700637817383,
+          62.72547149658203
+        ],
+        "peak_allocated_bytes": 267070976,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 305152,
+          "allocated_storage_bytes": 305152,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "decode",
+      "batch": 1,
+      "context": 2048,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 32,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 32,
+      "performance": {
+        "wall_ms": [
+          16.13720878958702,
+          16.170721501111984,
+          16.085200011730194,
+          16.144905239343643,
+          16.146037727594376,
+          16.161900013685226,
+          16.73133298754692,
+          17.27355271577835,
+          16.19468629360199,
+          16.216814517974854
+        ],
+        "wall_median_ms": 16.166310757398605,
+        "wall_p10_ms": 16.132007911801338,
+        "wall_p90_ms": 16.785554960370064,
+        "cuda_event_ms": [
+          16.132095336914062,
+          16.1658878326416,
+          16.080480575561523,
+          16.140960693359375,
+          16.14236831665039,
+          16.157344818115234,
+          16.726720809936523,
+          17.269535064697266,
+          16.190176010131836,
+          16.21251106262207
+        ],
+        "peak_allocated_bytes": 228902912,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 305152,
+          "allocated_storage_bytes": 305152,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 117760,
+              "allocated_storage_bytes": 117760,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 65536,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 32768,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 2048
+            },
+            {
+              "logical_bytes": 18432,
+              "allocated_storage_bytes": 18432,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 2048,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 2048
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "prefill",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 32,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 32,
+      "performance": {
+        "wall_ms": [
+          209.23934876918793,
+          209.60300788283348,
+          209.1333270072937,
+          208.55583250522614,
+          208.98212864995003,
+          209.6366174519062,
+          207.71481469273567,
+          210.36941185593605,
+          208.07911083102226,
+          211.57773956656456
+        ],
+        "wall_median_ms": 209.1863378882408,
+        "wall_p10_ms": 208.0426812171936,
+        "wall_p90_ms": 210.4902446269989,
+        "cuda_event_ms": [
+          209.2359619140625,
+          209.59776306152344,
+          209.12892150878906,
+          208.55116271972656,
+          208.97744750976562,
+          209.63218688964844,
+          207.70962524414062,
+          210.3653106689453,
+          208.0741729736328,
+          211.5748748779297
+        ],
+        "peak_allocated_bytes": 379919872,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 907264,
+          "allocated_storage_bytes": 907264,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    },
+    {
+      "variant": "hybrid",
+      "phase": "decode",
+      "batch": 1,
+      "context": 8192,
+      "config": {
+        "vocab": 50257,
+        "width": 768,
+        "layers": 6,
+        "heads": 12,
+        "head_dim": 64,
+        "rope_dim": 16,
+        "q_rank": 128,
+        "o_groups": 4,
+        "o_rank": 64,
+        "hidden": 2048,
+        "window": 128,
+        "index_heads": 4,
+        "index_dim": 32,
+        "index_topk": 32,
+        "ratios": [
+          0,
+          0,
+          4,
+          128,
+          4,
+          128
+        ],
+        "max_context": 8192,
+        "query_tile": 128,
+        "eps": 1e-06,
+        "rope_theta": 10000.0,
+        "compress_rope_theta": 40000.0
+      },
+      "dtype": "torch.bfloat16",
+      "parameters": 109310216,
+      "lm_head": "last position only",
+      "weights": "random seed=1024; no quality-matched architectures",
+      "implementation": "eager PyTorch math; hybrid uses query tiles and stable argsort, not FlashMLA",
+      "decode_scope": "prefix build and cache-position restoration excluded for all variants",
+      "prefill_scope": "includes fresh cache allocation and population",
+      "precision": "native parameter dtype; compression and softmax accumulate in FP32",
+      "index_topk": 32,
+      "performance": {
+        "wall_ms": [
+          16.208790242671967,
+          16.206398606300354,
+          16.222234815359116,
+          16.237176954746246,
+          16.242116689682007,
+          16.2547305226326,
+          16.166381537914276,
+          16.233880072832108,
+          16.239572316408157,
+          16.222167760133743
+        ],
+        "wall_median_ms": 16.22805744409561,
+        "wall_p10_ms": 16.202396899461746,
+        "wall_p90_ms": 16.243378072977066,
+        "cuda_event_ms": [
+          16.20377540588379,
+          16.202495574951172,
+          16.21753692626953,
+          16.233312606811523,
+          16.23788833618164,
+          16.250591278076172,
+          16.161823272705078,
+          16.229631423950195,
+          16.234943389892578,
+          16.217920303344727
+        ],
+        "peak_allocated_bytes": 229554176,
+        "warmups": 3,
+        "repeats": 10,
+        "cache": {
+          "logical_bytes": 907264,
+          "allocated_storage_bytes": 907264,
+          "layers": [
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 16384,
+              "allocated_storage_bytes": 16384,
+              "fields": {
+                "raw": 16384
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 412672,
+              "allocated_storage_bytes": 412672,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 262144,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0,
+                "compressed.previous_values": 1024,
+                "compressed.previous_scores": 1024,
+                "indexer.history": 131072,
+                "indexer.tail_values": 0,
+                "indexer.tail_scores": 0,
+                "indexer.previous_values": 512,
+                "indexer.previous_scores": 512
+              },
+              "length": 8192
+            },
+            {
+              "logical_bytes": 24576,
+              "allocated_storage_bytes": 24576,
+              "fields": {
+                "raw": 16384,
+                "compressed.history": 8192,
+                "compressed.tail_values": 0,
+                "compressed.tail_scores": 0
+              },
+              "length": 8192
+            }
+          ]
+        },
+        "timing_note": "synchronized wall time; CUDA Events include launch gaps, not pure kernel work"
+      },
+      "status": "completed",
+      "scope": "random weights, no quality matching; top-k variants share initialization; single-path layer schedules change parameter sets"
+    }
+  ]
+}

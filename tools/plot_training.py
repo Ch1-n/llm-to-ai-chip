@@ -14,6 +14,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('metrics', type=Path)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--title', default='Seq-Monkey subset training')
+    parser.add_argument('--subtitle', default='119.7M parameters | RTX 4090 D | BF16 AMP | B=12, S=512')
     args = parser.parse_args()
     rows = [json.loads(line) for line in args.metrics.read_text().splitlines()]
     train = [row for row in rows if row['phase'] == 'train']
@@ -30,7 +32,7 @@ def main():
     axis.plot([row['step'] for row in validation], [row['loss'] for row in validation],
               color='#B34B3E', marker='o', markersize=4, linewidth=1.7,
               label='Held-out validation loss')
-    axis.set_title('Seq-Monkey subset training\n119.7M parameters | RTX 4090 D | BF16 AMP | B=12, S=512')
+    axis.set_title(args.title + '\n' + args.subtitle)
     axis.set_xlabel('Optimizer step')
     axis.set_ylabel('Cross-entropy loss (nats/token)')
     axis.grid(alpha=0.18)

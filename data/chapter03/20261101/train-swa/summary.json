@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "steps": 300,
+  "tokens_seen": 1843200,
+  "validation_initial": 10.987809300422668,
+  "validation_final": 2.990144282579422,
+  "validation_best": 2.990144282579422,
+  "train_loss_last_25_mean": 2.946588535308838,
+  "median_model_step_seconds_after_10": 0.1142235267907381,
+  "wall_seconds_including_eval_save": 51.57826357707381,
+  "peak_allocated_bytes": 8556157440
+}

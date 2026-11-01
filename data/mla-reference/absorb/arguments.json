@@ -1,0 +1,20 @@
+{
+  "command": "train",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "threads": 4,
+  "output": "/root/autodl-tmp/llm-chapter02-20261025/runs/mla-reference-absorb-text-300",
+  "preset": "teaching",
+  "batch": 12,
+  "context": 512,
+  "all_logits": false,
+  "aux_weight": 0.01,
+  "variant": "mla-reference-absorb",
+  "backend": "math",
+  "data": "/root/autodl-tmp/llm-chapter02-20261025/datasets/seq-monkey-first-subset",
+  "steps": 300,
+  "eval_every": 25,
+  "eval_blocks": 192,
+  "lr": 0.0003,
+  "save_checkpoint": true
+}

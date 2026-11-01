@@ -1,0 +1,5 @@
+# Install the CUDA-enabled PyTorch wheel appropriate for the remote driver first.
+# Exact installed versions are captured by the experiment environment report.
+torch>=2.7,<3
+numpy>=1.26,<3
+# Optional CUDA backends are installed separately: flash-attn / flash-attn-3 / flash-attn-4.

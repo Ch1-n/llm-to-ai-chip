@@ -16,6 +16,8 @@ import numpy as np
 import torch
 
 from validate_cuda_notebook import corrected_rope, load_definitions
+from chapter02.notebook_adapter import install_attention_backend
+from chapter02.runtime import environment, fresh_directory, write_json
 
 
 def main():
@@ -28,11 +30,11 @@ def main():
     parser.add_argument('--sequence', type=int, default=512)
     parser.add_argument('--eval-every', type=int, default=25)
     parser.add_argument('--eval-batches', type=int, default=16)
+    parser.add_argument('--backend', choices=('notebook', 'fa2', 'sdpa-flash'), default='notebook')
     args = parser.parse_args()
-    assert args.steps >= 1 and args.batch > 0 and args.sequence > 0
+    assert min(args.steps, args.batch, args.sequence, args.eval_every, args.eval_batches) > 0
     assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
-    args.output.mkdir(parents=True, exist_ok=True)
-    assert not (args.output / 'metrics.jsonl').exists(), 'Use a new run directory'
+    fresh_directory(args.output)
     random.seed(1024)
     np.random.seed(1024)
     torch.manual_seed(1024)
@@ -45,6 +47,21 @@ def main():
     config.head_size = config.n_embd // config.n_head
     assert args.sequence <= config.block_size
     model = module.GPT(config).cuda()
+    install_attention_backend(model, module, args.backend)
+    parameter_hash = hashlib.sha256()
+    for name, parameter in model.named_parameters():
+        parameter_hash.update(name.encode())
+        parameter_hash.update(parameter.detach().cpu().numpy().tobytes())
+    initial_parameter_sha256 = parameter_hash.hexdigest()
+    manifest = json.loads((args.data / 'manifest.json').read_text())
+    token_hashes = {}
+    for split in ('train', 'val'):
+        with (args.data / f'{split}.bin').open('rb') as stream:
+            token_hashes[split] = hashlib.file_digest(stream, 'sha256').hexdigest()
+        if token_hashes[split] != manifest['token_bin_sha256'][split]:
+            raise ValueError(f'{split} data does not match manifest SHA256')
+    if set(manifest['documents']['train']) & set(manifest['documents']['val']):
+        raise ValueError('train/validation document hashes overlap')
     arrays = {name: np.memmap(args.data / f'{name}.bin', dtype=np.uint16, mode='r')
               for name in ('train', 'val')}
     block_counts = {name: (len(array) - 1) // args.sequence for name, array in arrays.items()}
@@ -76,8 +93,10 @@ def main():
         return total_loss / total_tokens
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=3e-4, weight_decay=0.01)
-    manifest = json.loads((args.data / 'manifest.json').read_text())
     metadata = {'seed': 1024, 'model': asdict(config), 'parameters': sum(p.numel() for p in model.parameters()),
+                'backend': args.backend, 'initial_parameter_sha256': initial_parameter_sha256,
+                'actual_token_bin_sha256': token_hashes, 'validation_block_ids': validation_ids.tolist(),
+                'first_epoch_training_order_sha256': hashlib.sha256(order.astype('<i8').tobytes()).hexdigest(),
                 'steps': args.steps, 'batch': args.batch, 'sequence': args.sequence,
                 'precision': 'FP32 weights/optimizer; BF16 autocast; no GradScaler',
                 'optimizer': 'AdamW lr_peak=3e-4 lr_min=3e-5 weight_decay=0.01 grad_clip=1.0',
@@ -87,12 +106,17 @@ def main():
                 'notebook_sha256': hashlib.sha256(args.notebook.read_bytes()).hexdigest(),
                 'training_script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 'loader_script_sha256': hashlib.sha256(Path(__file__).with_name('validate_cuda_notebook.py').read_bytes()).hexdigest(),
+                'adapter_script_sha256': hashlib.sha256(Path(__file__).with_name('chapter02').joinpath('notebook_adapter.py').read_bytes()).hexdigest(),
                 'data_manifest_sha256': hashlib.sha256((args.data / 'manifest.json').read_bytes()).hexdigest(),
                 'tokens_available': manifest['tokens'], 'blocks_available': block_counts,
                 'training_order': 'Random permutation of packed non-overlapping input blocks; reshuffle on exhaustion.',
                 'document_packing': 'Concatenate separately in each split with EOT; attention may cross document boundaries.',
-                'interpretation': 'Short real-text learning experiment, not convergence or general capability validation. Fixed held-out validation blocks reused throughout.'}
+                'interpretation': 'Short real-text learning experiment, not convergence or general capability validation. Fixed held-out validation blocks reused throughout.',
+                'backend_comparison': 'Original notebook weights/projections preserved; Attention heads stacked for fused backends. Same seed does not imply identical dropout masks across implementations.'}
     (args.output / 'config.json').write_text(json.dumps(metadata, indent=2) + '\n')
+    write_json(args.output / 'environment.json', environment())
+    write_json(args.output / 'arguments.json', {k: str(v) if isinstance(v, Path) else v
+                                              for k, v in vars(args).items()})
     rows = []
 
     def record(row):
@@ -143,7 +167,9 @@ def main():
             if value < best:
                 best = value
                 torch.save({'step': step, 'config': asdict(config), 'model': model.state_dict(),
-                            'val_loss': value, 'data_manifest_sha256': metadata['data_manifest_sha256']},
+                            'val_loss': value, 'data_manifest_sha256': metadata['data_manifest_sha256'],
+                            'backend': args.backend,
+                            'note': 'Model weights only; no optimizer/RNG state for exact resumption.'},
                            args.output / 'best-model.pt')
     median = statistics.median(timings[10:] or timings)
     result = {'status': 'completed', 'steps': args.steps, 'tokens_seen': args.steps * args.batch * args.sequence,

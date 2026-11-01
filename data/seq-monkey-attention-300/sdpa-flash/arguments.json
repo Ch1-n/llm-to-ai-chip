@@ -1,0 +1,11 @@
+{
+  "notebook": "/root/autodl-tmp/llm-chapter02-20261025/build_gpt.ipynb",
+  "data": "/root/autodl-tmp/llm-chapter02-20261025/datasets/seq-monkey-first-subset",
+  "output": "/root/autodl-tmp/llm-chapter02-20261025/runs/seq-monkey-sdpa-flash-300",
+  "steps": 300,
+  "batch": 12,
+  "sequence": 512,
+  "eval_every": 25,
+  "eval_batches": 16,
+  "backend": "sdpa-flash"
+}

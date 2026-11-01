@@ -1,0 +1,73 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "pytorch": "2.8.0+cu128",
+  "cuda_runtime": "12.8",
+  "cuda_available": true,
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.5.4",
+    "flash-attn": null,
+    "flash-attn-3": null,
+    "flash-attn-4": "4.0.0b36",
+    "nvidia-cutlass-dsl": "4.8.1"
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "compute_capability": [
+        8,
+        9
+      ],
+      "total_memory_bytes": 25250627584
+    }
+  ],
+  "nvidia_smi": "Sun Nov  1 09:42:50 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4090        On  |   00000000:52:00.0 Off |                  Off |\n| 30%   32C    P2             71W /  450W |    1341MiB /  24564MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            4279      C   .../.venv-fa4-torch28/bin/python       1332MiB |\n+-----------------------------------------------------------------------------------------+\n",
+  "chapter02_source_sha256": {
+    "__init__.py": "3c05f0197d11df095f3d3efdb7f38c9fa2ba287150a63b821821b6d8f246d16e",
+    "attention.py": "32560043b95d75b5591e4457d7098820a612c78ec4a6057ecf6b84fa8d22844c",
+    "cache.py": "23b873e44dc83a622f12a5b0a1f5ab823f69d448c7aaeaaa72df16d0358f21c7",
+    "check_mla_reference.py": "01e5f8ffbf0d606cf3a64c7089259aba9f509b697f9921bbb5528e5f9a3000cf",
+    "check_precision.py": "bf1aeb1f022963d9a5eadddd0b115c23c3d4e2e88248ad015032db83651499ad",
+    "checks.py": "5d0ed491f25f0e2efc9e84fbcda77725b55774621a5ceea8e1286718956c9613",
+    "config.py": "1cc209f8a061899412271eb982e7db91aa5af84666ada1a45cd807fcd97a2702",
+    "diagnose_router.py": "2d471c3655a64440a9b019c6a205c1c52b21309308e19581d7567ead371a4978",
+    "micro.py": "cd56d00bbbfd965fc7c367ee3eca04c7995dcff191863186a98244a6ddd6ffb9",
+    "mla_reference.py": "501b64f5fc1a815462ad39eedb9af2f57e8ae34f36f7a79d96a84e332c321dda",
+    "model.py": "45fa61e9f2eca05c502e54d89b32815ad494996cb76f5d5d4aaa840792672139",
+    "notebook_adapter.py": "50fc8605e6f93e297fd5c0fa274263442842d9f2a715025a63ff9125437a2a69",
+    "plot_mla_training.py": "0d8e615c61d3df12dff41ca6047636bf41a7ebf82ee89855bd1ec7b5307264fd",
+    "run.py": "c238e55be1ac155e7f64af4c8df2401778d8f6ed4a1d2358f9ed0d6188add896",
+    "runtime.py": "7180c10ba8aa06825387700ae3173613021f19f32635ffd89796e773daffefbf",
+    "suite.py": "44d9e5fb2d20c846ce6b69689ce7e87f67c20b23ccf459227dc73ac04874f7aa",
+    "summarize.py": "8a82f102ec075828381743995219e82c740465338baa0cbe38d3a98e7651b36e",
+    "trace_summary.py": "83b8005ab48e65fba583150567b0cf8b8ab25a72308256fed9877836ad3d3b6a",
+    "training.py": "e785f179120b51271888376ddd93d6f96e26cb11cd70e08f0033e3f5c544ed12",
+    "verify_mla_training.py": "d8501bfafd24d97095691d3080a3b27c344764490e56f07d4d4248b0c76bff9c"
+  },
+  "source_sha256": {
+    "__init__.py": "694d3c8cd36be1d51b8b8ceb5059957f57f45cfd48edb42595e23796646b65bc",
+    "attention.py": "e90ba64ae6e6d89cc9fd4b4355e87958c552512f745478101e1f15d41d783d99",
+    "checks.py": "5f5945a2e1d1f6210135962bdc02307b78d6440dac14dcd43772fe3bd74189c9",
+    "config.py": "cbddbd805d7b114413b4dd6dce0b059423f4e2574c98cbf847a9d3324ffe1185",
+    "diagnose_selection.py": "660da1c6b96274728bcdbc937edf60b4477e2d20b26d0c8a33f59b0e063ee2df",
+    "model.py": "3e58d1f92416b8685e4e17de0e236361f4e7a8bc7d5439b77892799655b6cd8e",
+    "plot.py": "dedff633e35efdd81b423df7593d9e6c167b83e02964b4418a0385d5dd1a12a9",
+    "reference.py": "fa3446389a0ad25b6257d83cb53cab470d42d0b728c5a576e2d664e1970cce8b",
+    "run.py": "6d1910d1c10e32892d0d1146fb5a3bcee25e21637be484ffbd46df0db06385dd",
+    "runtime.py": "456b23fffa17aeca40bc9d07a91c8d73372de395773ab25cc47b1f1e2d4210ef",
+    "supplement.py": "567d00ab4a82731213bfd3896cb43b2083dd34c74607161d629f0256caa70801",
+    "training.py": "c17f5c8694094ef0af8a154e93c0d128ae9748d42931cfe7558cbcbfefb6c5e7",
+    "verify.py": "badd2c563216fd030d3d09d5e463e5d2143b9299d9bdc97c42855b3583d6a415"
+  },
+  "reference_sha256": {
+    "LICENSE": "f2c6c602815669d292889e5be8c802f2ed950653b77999b1584e8e6aed25d040",
+    "LICENSE-transformers": "77fd4710def9ec3c0f6225800e0235f15a425abd4a8b03559127fcd782612049",
+    "README.md": "ff6b0abca06014374f358a89d93f46225242574a0d9894e5ab129e0117fdb76c",
+    "kernel.py": "59b325083d7103975cba025bd0d60ea343bb82d8fff53088afb7c04bd380c0c2",
+    "model.py": "ce962f1face79d4f633d36436576214057a7e11443c9789935e1deb5c6cd1d71",
+    "transformers-modeling.py": "0375649d727a9fbea1756a500336af7d9ca66469e63c16bfabded25c85e5cebd"
+  },
+  "reference_scope": "V4 Flash unquantized attention only; no full V4 weights/MoE/mHC/MTP/Muon"
+}

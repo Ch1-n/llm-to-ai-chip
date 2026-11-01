@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "source_archive_sha256": "5d28d7a83a95d90fb0a40ccb499e7fa66fd1657858db85623568c98270b4197b",
+  "token_bin_sha256": {
+    "train": "cc23e083c35c99804a1017159a837ffd45bfb8e7668011b2e3b269da22cfd113",
+    "val": "e7ec559a11ba7b7566005c4a0f4468b961019df544d3f7d847326a59da2bb28e"
+  },
+  "runs": {
+    "hybrid": {
+      "train_records": 300,
+      "val_records": 13,
+      "parameters": 109310216,
+      "validation_final": 2.990169733762741,
+      "checkpoint_step": 300,
+      "checkpoint_sha256": "61110d6540ef886c6edce1d414e13d68e69b30e6b9d0661a0fdcd91b6e7a0ca0",
+      "checkpoint_tensors_finite": true,
+      "indexer_gradient_present": true
+    },
+    "swa": {
+      "train_records": 300,
+      "val_records": 13,
+      "parameters": 108466632,
+      "validation_final": 2.990144282579422,
+      "checkpoint_step": 300,
+      "checkpoint_sha256": "049023ef91345af40fc71e156e3eae3c0f9bcd074547a14f3abba60a878dbe48",
+      "checkpoint_tensors_finite": true,
+      "indexer_gradient_present": true
+    }
+  }
+}

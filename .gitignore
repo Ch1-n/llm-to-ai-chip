@@ -1,6 +1,8 @@
 /.build/
 /zhihu/
 /.venv/
+/.venv-chapter02/
+/runs/
 __pycache__/
 *.pyc
 .DS_Store

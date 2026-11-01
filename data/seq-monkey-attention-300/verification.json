@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "token_bin_sha256": {
+    "train": "cc23e083c35c99804a1017159a837ffd45bfb8e7668011b2e3b269da22cfd113",
+    "val": "e7ec559a11ba7b7566005c4a0f4468b961019df544d3f7d847326a59da2bb28e"
+  },
+  "runs": {
+    "fa2": {
+      "train_records": 300,
+      "validation_records": 13,
+      "checkpoint_step": 300,
+      "checkpoint_tensors_finite": true,
+      "validation_final": 3.1021958589553833,
+      "initial_parameter_sha256": "7c6ba1da3563d71c19b54d29510f45393041b6b2e9e4c3844f221dbfc5ba52fc"
+    },
+    "sdpa-flash": {
+      "train_records": 300,
+      "validation_records": 13,
+      "checkpoint_step": 300,
+      "checkpoint_tensors_finite": true,
+      "validation_final": 3.100855052471161,
+      "initial_parameter_sha256": "7c6ba1da3563d71c19b54d29510f45393041b6b2e9e4c3844f221dbfc5ba52fc"
+    }
+  }
+}

@@ -37,3 +37,15 @@
 2026-10-25 另完成 Seq-Monkey 有限子集上的 300 步 BF16 AMP 训练，详见 `experiments/seq-monkey-300.md`。语料原发布方为出门问问，原始说明标注文本数据集采用 Apache-2.0；实际流式来源为 ModelScope 的 ddzhu123/seq-monkey 第三方镜像，未下载或校验完整压缩包，不能宣称已经确认与官方全量数据一致。
 
 按规范化文档哈希去重及划分，然后分别分词切块；保留文档摘要、token 文件哈希和脚本指纹。图中训练值来自每步日志，验证值来自固定 held-out blocks，连接验证点不代表连续评估。仓库不分发原始语料正文、token 文件或 checkpoint。短程实验不构成收敛、语言质量或完整训练的证明。
+
+## 第三篇：V4 衍生 Hybrid Attention
+
+2026-11-01 的实现固定 [DeepSeek-V4-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/tree/60d8d70770c6776ff598c94bb586a859a38244f1)，revision `60d8d70770c6776ff598c94bb586a859a38244f1`，参考[技术报告第 2.3 节](https://arxiv.org/html/2606.19348)。另固定 [Transformers DeepSeek-V4 eager 实现](https://github.com/huggingface/transformers/blob/f90e93c4f83974f634860e246cdfd2c68666d605/src/transformers/models/deepseek_v4/modeling_deepseek_v4.py)，commit `f90e93c4f83974f634860e246cdfd2c68666d605`，作为独立密集核心对照。
+
+这部分新增的官方参考文件保存在 `references/deepseek-v4/`，保留 MIT 与 Apache 2.0 许可证、来源和哈希。之前“没有复制 Notebook”的说明仍成立，但不应理解为当前仓库没有任何上游参考源码。
+
+实现限于缩小的未量化 SWA/CSA/HCA 注意力组件，搭配 Dense SwiGLU、普通 residual 和 AdamW。关闭量化及 YaRN，参考核心替换和稳定同分策略均有明确标记；Indexer 使用教学用 KL 辅助训练。不是完整 DeepSeek-V4、V4.1、官方训练配方或生产 kernel 的复现。
+
+已完成参考/缓存/梯度核对、两组真实文本 300 步训练、随机权重性能扫描与时间线分析。短程 Loss 不证明长上下文质量；跨结构既没有质量匹配，又有 query 分块等实现差异，不能作为生产模型性能排行。详细依据、计时与状态口径见[实验记录](experiments/chapter03-rtx4090-20261101.md)和[运行说明](experiments/chapter03-runbook.md)。
+
+随后补齐 [MoE 文本训练及训练后路由检查](experiments/moe-text-20261101.md)与[第三篇补测](experiments/chapter03-supplement-20261101.md)。MoE 的三组低精度分块检查及 Hybrid 的一组 BF16 长序列增量检查未全部满足原容差，原始误差保留；本地单元测试通过不代表这些数值未通过项已解决。历史长度评估只是固定后缀的有限观察，没有充分长序列训练或专门长文能力评测。

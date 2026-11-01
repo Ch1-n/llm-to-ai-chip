@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "actual_token_bin_sha256": {
+    "train": "cc23e083c35c99804a1017159a837ffd45bfb8e7668011b2e3b269da22cfd113",
+    "val": "e7ec559a11ba7b7566005c4a0f4468b961019df544d3f7d847326a59da2bb28e"
+  },
+  "source_archive_sha256": "777283df05174ea7dc8ba3c99ed43999259b5b85a3ddee9aef7ee586b1eea784",
+  "runs": {
+    "mla-reference-naive": {
+      "train_records": 300,
+      "validation_records": 13,
+      "checkpoint_step": 300,
+      "checkpoint_tensors_finite": true,
+      "checkpoint_sha256": "69a95c15a30ac5f2eeb8f3b329eb3608e2e6493b841be754f8ac1d84fcb101dd",
+      "validation_final": 3.024455279111862,
+      "initial_parameter_sha256": "fb93a6701665d9fce67d128df503643d2ac88cd4d2bb2b25cb1b68d6e099f2b9"
+    },
+    "mla-reference-absorb": {
+      "train_records": 300,
+      "validation_records": 13,
+      "checkpoint_step": 300,
+      "checkpoint_tensors_finite": true,
+      "checkpoint_sha256": "1b66910fa59bd12001610b4cf49b75e090844094d0dcedf3768e5416456b78cf",
+      "validation_final": 3.024164378643036,
+      "initial_parameter_sha256": "fb93a6701665d9fce67d128df503643d2ac88cd4d2bb2b25cb1b68d6e099f2b9"
+    }
+  }
+}

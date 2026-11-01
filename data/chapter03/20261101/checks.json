@@ -1,0 +1,391 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "kind": "original_v4_unquantized_attention_output_cache",
+      "ratio": 0,
+      "precision": "float32",
+      "status": "passed",
+      "comparisons": [
+        {
+          "max_abs": 3.725290298461914e-09,
+          "relative_l2": 1.7298366560759644e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 1.5438909606802588e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.3969838619232178e-09,
+          "relative_l2": 1.407804502344085e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 2.7939677238464355e-09,
+          "relative_l2": 3.368007040498114e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.3969838619232178e-09,
+          "relative_l2": 2.538698865324441e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 1.3934028634200547e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.6298145055770874e-09,
+          "relative_l2": 1.446491528238515e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 2.0954757928848267e-09,
+          "relative_l2": 2.207600614147389e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.3969838619232178e-09,
+          "relative_l2": 1.840791990378639e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        }
+      ],
+      "reference_adapters": [
+        "quantization disabled",
+        "orthogonal Hadamard omitted",
+        "stable tied-score ordering",
+        "Transformers dense eager core"
+      ]
+    },
+    {
+      "kind": "original_v4_unquantized_attention_output_cache",
+      "ratio": 4,
+      "precision": "float32",
+      "status": "passed",
+      "comparisons": [
+        {
+          "max_abs": 3.725290298461914e-09,
+          "relative_l2": 1.7430706381305673e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 1.5969456446812224e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.3969838619232178e-09,
+          "relative_l2": 3.084340997660395e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.3969838619232178e-09,
+          "relative_l2": 2.1303259566145368e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.0477378964424133e-09,
+          "relative_l2": 1.4089229325816068e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 1.7775955865901504e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.3969838619232178e-09,
+          "relative_l2": 2.096789912101736e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 9.313225746154785e-10,
+          "relative_l2": 2.2049492116761527e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 1.9211734810188506e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        }
+      ],
+      "reference_adapters": [
+        "quantization disabled",
+        "orthogonal Hadamard omitted",
+        "stable tied-score ordering",
+        "Transformers dense eager core"
+      ]
+    },
+    {
+      "kind": "original_v4_unquantized_attention_output_cache",
+      "ratio": 128,
+      "precision": "float32",
+      "status": "passed",
+      "comparisons": [
+        {
+          "max_abs": 4.6566128730773926e-09,
+          "relative_l2": 1.8589905649239664e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 2.2785777293364042e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 9.313225746154785e-10,
+          "relative_l2": 1.3994454519136146e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 9.313225746154785e-10,
+          "relative_l2": 1.2573094166353737e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.1641532182693481e-09,
+          "relative_l2": 1.1563725466668707e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 1.631238552492498e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 2.2625832026081014e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.862645149230957e-09,
+          "relative_l2": 1.768459603364605e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 9.313225746154785e-10,
+          "relative_l2": 1.3550633551086992e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        }
+      ],
+      "reference_adapters": [
+        "quantization disabled",
+        "orthogonal Hadamard omitted",
+        "stable tied-score ordering",
+        "Transformers dense eager core"
+      ]
+    },
+    {
+      "kind": "gathered_core_vs_transformers_output_and_gradients",
+      "status": "passed",
+      "output": {
+        "max_abs": 2.384185791015625e-07,
+        "relative_l2": 7.726551632609914e-08,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2_limit": 0.001,
+        "passed": true
+      },
+      "gradients": [
+        {
+          "max_abs": 1.430511474609375e-06,
+          "relative_l2": 1.6201278113768135e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 1.9073486328125e-06,
+          "relative_l2": 1.2115034190077556e-07,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        },
+        {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 1.2566491189194959e-08,
+          "atol": 3e-05,
+          "rtol": 0.0003,
+          "relative_l2_limit": 0.001,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "kind": "full_model_chunked_cache_and_causality",
+      "variant": "swa",
+      "dtype": "torch.float32",
+      "status": "passed",
+      "cache_error": {
+        "max_abs": 5.304813385009766e-06,
+        "relative_l2": 1.6010287530472153e-06,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2_limit": 0.001,
+        "passed": true
+      },
+      "causality": {
+        "max_abs": 0.0,
+        "relative_l2": 0.0,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2_limit": 0.001,
+        "passed": true
+      }
+    },
+    {
+      "kind": "full_model_chunked_cache_and_causality",
+      "variant": "swa",
+      "dtype": "torch.bfloat16",
+      "status": "passed",
+      "cache_error": {
+        "max_abs": 0.068359375,
+        "relative_l2": 0.02048720302973092,
+        "atol": 0.08,
+        "rtol": 0.08,
+        "relative_l2_limit": 0.1,
+        "passed": true
+      },
+      "causality": {
+        "max_abs": 0.0,
+        "relative_l2": 0.0,
+        "atol": 0.08,
+        "rtol": 0.08,
+        "relative_l2_limit": 0.1,
+        "passed": true
+      }
+    },
+    {
+      "kind": "full_model_chunked_cache_and_causality",
+      "variant": "hybrid",
+      "dtype": "torch.float32",
+      "status": "passed",
+      "cache_error": {
+        "max_abs": 5.632638931274414e-06,
+        "relative_l2": 1.5778019966437577e-06,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2_limit": 0.001,
+        "passed": true
+      },
+      "causality": {
+        "max_abs": 0.0,
+        "relative_l2": 0.0,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2_limit": 0.001,
+        "passed": true
+      }
+    },
+    {
+      "kind": "full_model_chunked_cache_and_causality",
+      "variant": "hybrid",
+      "dtype": "torch.bfloat16",
+      "status": "passed",
+      "cache_error": {
+        "max_abs": 0.07421875,
+        "relative_l2": 0.021374003464985542,
+        "atol": 0.08,
+        "rtol": 0.08,
+        "relative_l2_limit": 0.1,
+        "passed": true
+      },
+      "causality": {
+        "max_abs": 0.0,
+        "relative_l2": 0.0,
+        "atol": 0.08,
+        "rtol": 0.08,
+        "relative_l2_limit": 0.1,
+        "passed": true
+      }
+    }
+  ],
+  "model_preset": "teaching",
+  "scope": "unquantized V4-derived attention; no complete pretrained model equivalence"
+}
