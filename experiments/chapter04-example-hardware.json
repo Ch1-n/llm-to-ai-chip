@@ -1,0 +1,17 @@
+{
+  "matrix_tflops": 20.0,
+  "fp32_matrix_tflops": 5.0,
+  "bandwidth_gbs": 100.0,
+  "vector_gops": 64.0,
+  "exp_gops": 4.0,
+  "reciprocal_gops": 4.0,
+  "rsqrt_gops": 1.0,
+  "selection_gitems": 1.0,
+  "sram_mib": 4.0,
+  "dispatch_us": 0.2,
+  "silu_speedup": 1.0,
+  "sfu_speedup": 1.0,
+  "linear_tile_m": 16,
+  "linear_tile_n": 16,
+  "linear_tile_k": 16
+}

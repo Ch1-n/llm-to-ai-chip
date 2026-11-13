@@ -1,0 +1,20 @@
+{
+  "verification_status": "passed",
+  "scope": "analytical record integrity, not hardware or numerical-model validation",
+  "source_fingerprints": 41,
+  "baseline_cases": 72,
+  "sensitivity_cases": 392,
+  "matrix_bandwidth_cases": 18,
+  "sram_fusion_cases": 64,
+  "earlier_cache_comparisons": 18,
+  "infeasible_cases_retained": 18,
+  "data_sha256": {
+    "baseline.csv": "0b2dbb3db29db34ba4d32328cf3ac475d05a25849a798f6ec15261228b4539fd",
+    "baseline.json": "a120712c6ab7bda2d703091f8881934ac4213c26b95db8f119084adfcda30ac4",
+    "matrix-bandwidth-grid.json": "511e7d38072c1837774d81980577c0c5b34b51477408ac51bf0fb82bfd9e68fc",
+    "metadata.json": "596aca71f881d5eb79896437092322bdcbc4df2523bbde3d60a4ecaf666f5894",
+    "operator-inventory.json": "1313a45da3d584646be4f39a1072ed967313cbfc0d56793cf27b9d0cd3bcc683",
+    "sensitivity.json": "8dd3a9cf9757a397cca5fa07b49b70d8140d9381c5b9c9f24af62335180a0982",
+    "sram-fusion.json": "6f83e2a21ae9728d5711fb58d4b2a14980a2ea8f595767fed0e4327684e96f91"
+  }
+}

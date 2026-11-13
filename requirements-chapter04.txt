@@ -1,0 +1,4 @@
+# The analyzer and verifier use only the Python 3.11+ standard library.
+# Optional dependencies below are needed only for plotting.
+matplotlib>=3.8,<4
+numpy>=1.26,<3
